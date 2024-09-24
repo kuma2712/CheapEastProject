@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Cheap Eats | Tambah</title>
     
     <!-- Custom fonts for this template-->
     <link href="{{ asset('css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -45,11 +45,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('indexAja') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Cheap <sup>Eats</sup></div>
             </a>
 
             <!-- Divider -->
@@ -57,7 +57,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('indexAja')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -80,8 +80,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Aksi</h6>
-                        <a class="collapse-item" href="">Tambah data</a>
-                        <a class="collapse-item" href="cards.html">Hapus Data</a>
+                        <a class="collapse-item" href="{{ route('TambahData') }}">Tambah data</a>
                         <a class="collapse-item" href="cards.html">Riwayat Hapus Data</a>
                     </div>
                 </div>
@@ -370,56 +369,51 @@
                     <div class="row">
                         
                         <div class="col-xl-8 col-lg-7">
-                        <button class="btn btn-info mb-3">Tambah</button>
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Data Table</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="material-symbols-outlined">more_vert</span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Lainnya</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tambah menu</h6>
                                 </div>
                                 <!-- table data taro di sini -->
-                                <div class="card-body text-center">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">No</th>
-                                                <th scope="col">Nama menu</th>
-                                                <th scope="col">Qty</th>
-                                                <th scope="col">Keterangan</th>
-                                                <th scope="col">#</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>tes</td>
-                                                <td>2</td>
-                                                <td>tes</td>
-                                                <td><button class="btn btn-warning">Edit</button></td>
-                                                <td><button class="btn btn-danger">Hapus</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>tes</td>
-                                                <td>2</td>
-                                                <td>tes</td>
-                                                <td><button class="btn btn-warning">Edit</button></td>
-                                                <td><button class="btn btn-danger">Hapus</button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="card-body">
+                                    <label for="idpengguna" class="form-label">ID user</label>
+                                    <input class="form-control" type="text" placeholder="-" aria-label="default input example" disabled>
+
+                                    <label for="idpengguna" class="form-label mt-4">Nama menu</label>
+                                    <div class="form-floating">
+                                        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+                                        <label for="floatingTextarea">Masukan nama menu yang ingin dijual</label>
+                                    </div>
+
+                                    <label for="idpengguna" class="form-label mt-4">Keterangan</label>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Masukan keterangan atau detail terkait menu yang akan di input</label>
+                                    </div>
+
+                                    <label for="idpengguna" class="form-label mt-4">Qty</label>
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></input>
+                                        <label for="floatingTextarea">Masukan jumlah menu</label>
+                                    </div>
+
+                                    <label for="idpengguna" class="form-label mt-4">Kelayakan</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Layak makan
+                                        </label>
+                                    </div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Tidak layak makan
+                                        </label>
+                                    </div>
+
+                                    <button class="btn btn-info mt-3">Tambah</button>
+                                    <button class="btn btn-danger mt-3">Kembali</button>
                                 </div>
                                 <!-- akhir table data -->
                             </div>
